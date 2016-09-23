@@ -3,10 +3,11 @@ FROM trustcode/docker-odoo-base
 	##### Repositórios TrustCode #####
 
 WORKDIR /opt/odoo/
-RUN git clone -b 8.0 https://github.com/Trust-Code/scrum.git
+RUN git clone -b master https://github.com/Trust-Code/scrum.git
 
 RUN git clone https://github.com/Trust-Code/PyCNAB.git pycnab
 RUN git clone https://github.com/Trust-Code/pyboleto.git
+RUN pip install pytrustnfe
 
 	##### Configurações Odoo #####
 
