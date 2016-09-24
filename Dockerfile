@@ -17,7 +17,7 @@ RUN unzip -q scrum.zip && rm scrum.zip && mv scrum-master scrum && \
     cd odoo && find . -name "*.po" -not -name "pt_BR.po" -not -name "pt.po"  -type f -delete && \
     rm -R debian && rm -R doc && rm -R setup && cd .. && \
     cd pycnab && python setup.py install && cd .. && \
-    cd pyboleto && python setup.py install && cd .. && \
+    cd pyboleto && python setup.py install && cd ..
 
 RUN pip install pytrustnfe
 
