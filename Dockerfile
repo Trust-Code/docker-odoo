@@ -23,8 +23,7 @@ RUN pip install pytrustnfe
 
 ADD conf/odoo.conf /etc/odoo/
 
-RUN ln -s /etc/odoo/odoo.conf && \
-    chown -R odoo:odoo /etc/odoo/odoo.conf
+RUN chown -R odoo:odoo /etc/odoo/odoo.conf
 
 	##### Instalação do PySPED #####
 
