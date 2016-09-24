@@ -15,6 +15,7 @@ RUN unzip -q scrum.zip && rm scrum.zip && mv scrum-master scrum && \
     unzip -q pyboleto.zip && rm pyboleto.zip && mv pyboleto-master pyboleto && \
     unzip -q odoo.zip && rm odoo.zip && mv odoo-master odoo && \
     cd odoo && find . -name "*.po" -not -name "pt_BR.po" -not -name "pt.po"  -type f -delete && \
+    find . -path "*l10n_*" -delete && \
     rm -R debian && rm -R doc && rm -R setup && cd ..&& \
     cd pycnab && python setup.py install && cd .. && \
     cd pyboleto && python setup.py install && cd ..
