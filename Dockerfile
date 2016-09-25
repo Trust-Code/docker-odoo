@@ -30,5 +30,10 @@ RUN chown -R odoo:odoo /opt && \
 
 WORKDIR /opt/odoo
 
+ENV PG_HOST=localhost
+ENV PG_USER=odoo
+ENV PG_PASSWORD=odoo
+ENV PORT=8069
+
 VOLUME ["/opt/", "/etc/odoo"]
-CMD ["/usr/bin/supervisord"]
+ENTRYPOINT ["/usr/bin/supervisord"]
