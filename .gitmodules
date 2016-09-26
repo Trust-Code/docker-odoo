@@ -1,0 +1,3 @@
+[submodule "scrum"]
+	path = scrum
+	url = https://github.com/Trust-Code/scrum.git
