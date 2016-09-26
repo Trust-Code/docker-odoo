@@ -2,6 +2,8 @@ FROM quay.io/danimaribeiro/docker-odoo-base
 
 	##### Repositórios TrustCode #####
 
+ADD conf/supervisor-update.conf /etc/supervisor/supervisor-update.conf
+
 WORKDIR /opt/odoo
 
 RUN apt-get install -y unzip
