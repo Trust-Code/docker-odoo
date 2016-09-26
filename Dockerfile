@@ -2,8 +2,6 @@ FROM quay.io/danimaribeiro/docker-odoo-base
 
 	##### Repositórios TrustCode #####
 
-ADD conf/supervisor-update.conf /etc/supervisor/supervisor-update.conf
-
 WORKDIR /opt/odoo
 
 RUN apt-get install -y unzip
@@ -31,6 +29,7 @@ RUN chown -R odoo:odoo /opt && \
     chown -R odoo:odoo /etc/odoo/odoo.conf
 
 WORKDIR /opt/odoo
+USER odoo
 
 ENV PG_HOST=localhost
 ENV PG_USER=odoo
@@ -38,4 +37,4 @@ ENV PG_PASSWORD=odoo
 ENV PORT=8069
 
 VOLUME ["/opt/", "/etc/odoo"]
-ENTRYPOINT ["/usr/bin/supervisord"]
+CMD ["/usr/bin/supervisord"]
