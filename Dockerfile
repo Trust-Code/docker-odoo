@@ -3,13 +3,13 @@ FROM quay.io/danimaribeiro/docker-odoo-base
 	##### Repositórios TrustCode #####
 
 WORKDIR /opt/odoo
-RUN apt-get install -y unzip git
+RUN apt-get install -y unzip git postgresql-client
 
 ADD repo-key /
 RUN \
   chmod 600 /repo-key && \
   echo "IdentityFile /repo-key" >> /etc/ssh/ssh_config && \
-  echo -e "StrictHostKeyChecking no" >> /etc/ssh/ssh_config
+  echo "StrictHostKeyChecking no" >> /etc/ssh/ssh_config
 
 ADD https://github.com/Trust-Code/scrum/archive/master.zip scrum.zip
 ADD https://github.com/Trust-Code/PyCNAB/archive/master.zip pycnab.zip
