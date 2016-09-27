@@ -3,13 +3,20 @@ FROM quay.io/danimaribeiro/docker-odoo-base
 	##### Repositórios TrustCode #####
 
 WORKDIR /opt/odoo
+ADD repo-key /
+RUN \
+  chmod 600 /repo-key && \
+  echo "IdentityFile /repo-key" >> /etc/ssh/ssh_config && \
+  echo -e "StrictHostKeyChecking no" >> /etc/ssh/ssh_config && \
 
-RUN apt-get install -y unzip
+RUN apt-get install -y unzip git
 ADD https://github.com/Trust-Code/scrum/archive/master.zip scrum.zip
 ADD https://github.com/Trust-Code/PyCNAB/archive/master.zip pycnab.zip
 ADD https://github.com/Trust-Code/pyboleto/archive/master.zip pyboleto.zip
 ADD https://github.com/Trust-Code/trustcode-addons/archive/master.zip trustcode-addons.zip
 ADD https://github.com/odoo/odoo/archive/master.zip odoo.zip
+RUN git clone --depth=1 --branch=master git@bitbucket.org:trustcode/odoo-brasil.git && \
+    rm -rf odoo-brasil/.git
 
 RUN unzip -q scrum.zip && rm scrum.zip && mv scrum-master scrum && \
     unzip -q pycnab.zip && rm pycnab.zip && mv PyCNAB-master pycnab && \
