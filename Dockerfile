@@ -27,7 +27,8 @@ RUN pip install pytrustnfe
 	##### Configurações Odoo #####
 
 ADD conf/odoo.conf /etc/odoo/
-RUN chown -R odoo:odoo /opt && \
+RUN mkdir /opt/dados && \
+    chown -R odoo:odoo /opt && \
     chown -R odoo:odoo /etc/odoo/odoo.conf
 
 WORKDIR /opt/odoo
