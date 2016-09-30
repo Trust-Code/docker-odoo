@@ -12,15 +12,13 @@ RUN \
   echo "IdentityFile /repo-key" >> /etc/ssh/ssh_config && \
   echo "StrictHostKeyChecking no" >> /etc/ssh/ssh_config
 
-ADD https://github.com/Trust-Code/scrum/archive/master.zip scrum.zip
-ADD https://github.com/Trust-Code/pyboleto/archive/master.zip pyboleto.zip
-ADD https://github.com/Trust-Code/trustcode-addons/archive/master.zip trustcode-addons.zip
+ADD https://github.com/Trust-Code/scrum/archive/10.0.zip scrum.zip
+ADD https://github.com/Trust-Code/trustcode-addons/archive/10.0.zip trustcode-addons.zip
 ADD https://github.com/odoo/odoo/archive/master.zip odoo.zip
 RUN git clone --depth=1 --branch=master git@bitbucket.org:trustcode/odoo-brasil.git && \
     rm -rf odoo-brasil/.git
 
 RUN unzip -q scrum.zip && rm scrum.zip && mv scrum-master scrum && \
-    unzip -q pyboleto.zip && rm pyboleto.zip && mv pyboleto-master pyboleto && \
     unzip -q trustcode-addons.zip && rm trustcode-addons.zip && mv trustcode-addons-master trustcode-addons && \
     unzip -q odoo.zip && rm odoo.zip && mv odoo-master odoo && \
     cd odoo && find . -name "*.po" -not -name "pt_BR.po" -not -name "pt.po"  -type f -delete && \
@@ -28,7 +26,7 @@ RUN unzip -q scrum.zip && rm scrum.zip && mv scrum-master scrum && \
     rm -R debian && rm -R doc && rm -R setup && cd ..&& \
     cd pyboleto && python setup.py install && cd .. && rm -R pyboleto
 
-RUN pip install --no-cache-dir pytrustnfe python-cnab
+RUN pip install --no-cache-dir pytrustnfe python-cnab python-boleto
 
 	##### Configurações Odoo #####
 
