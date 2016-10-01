@@ -14,13 +14,13 @@ RUN \
 
 ADD https://github.com/Trust-Code/scrum/archive/10.0.zip scrum.zip
 ADD https://github.com/Trust-Code/trustcode-addons/archive/10.0.zip trustcode-addons.zip
-ADD https://github.com/odoo/odoo/archive/master.zip odoo.zip
+ADD https://github.com/odoo/odoo/archive/10.0.zip odoo.zip
 RUN git clone --depth=1 --branch=master git@bitbucket.org:trustcode/odoo-brasil.git && \
     rm -rf odoo-brasil/.git
 
-RUN unzip -q scrum.zip && rm scrum.zip && mv scrum-master scrum && \
-    unzip -q trustcode-addons.zip && rm trustcode-addons.zip && mv trustcode-addons-master trustcode-addons && \
-    unzip -q odoo.zip && rm odoo.zip && mv odoo-master odoo && \
+RUN unzip -q scrum.zip && rm scrum.zip && mv scrum-10.0 scrum && \
+    unzip -q trustcode-addons.zip && rm trustcode-addons.zip && mv trustcode-addons-10.0 trustcode-addons && \
+    unzip -q odoo.zip && rm odoo.zip && mv odoo-10.0 odoo && \
     cd odoo && find . -name "*.po" -not -name "pt_BR.po" -not -name "pt.po"  -type f -delete && \
     find . -path "*l10n_*" -delete && \
     rm -R debian && rm -R doc && rm -R setup && cd ..&& \
