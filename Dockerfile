@@ -15,7 +15,7 @@ RUN \
 ADD https://github.com/Trust-Code/scrum/archive/10.0.zip scrum.zip
 ADD https://github.com/Trust-Code/trustcode-addons/archive/10.0.zip trustcode-addons.zip
 ADD https://github.com/odoo/odoo/archive/10.0.zip odoo.zip
-RUN git clone --depth=1 --branch=master git@bitbucket.org:trustcode/odoo-brasil.git && \
+RUN git clone --depth=1 --branch=10.0 git@bitbucket.org:trustcode/odoo-brasil.git && \
     rm -rf odoo-brasil/.git
 
 RUN unzip -q scrum.zip && rm scrum.zip && mv scrum-10.0 scrum && \
