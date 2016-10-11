@@ -6,10 +6,10 @@ WORKDIR /opt/odoo
 ADD http://download.gna.org/wkhtmltopdf/0.12/0.12.1/wkhtmltox-0.12.1_linux-trusty-amd64.deb /opt/sources/temp.deb
 RUN apt-get install -y unzip git postgresql-client && rm /opt/sources/temp.deb
 
-ADD repo-key /
+ADD chave-ssh /opt/
 RUN \
-  chmod 600 /repo-key && \
-  echo "IdentityFile /repo-key" >> /etc/ssh/ssh_config && \
+  chmod 600 /opt/chave-ssh && \
+  echo "IdentityFile /opt/chave-ssh" >> /etc/ssh/ssh_config && \
   echo "StrictHostKeyChecking no" >> /etc/ssh/ssh_config
 
 ADD https://github.com/Trust-Code/scrum/archive/10.0.zip scrum.zip
