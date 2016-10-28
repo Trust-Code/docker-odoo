@@ -17,7 +17,7 @@ ADD https://github.com/Trust-Code/trustcode-addons/archive/10.0.zip trustcode-ad
 ADD https://github.com/odoo/odoo/archive/10.0.zip odoo.zip
 RUN git clone --depth=1 --branch=10.0 git@bitbucket.org:trustcode/odoo-brasil.git && \
     rm -rf odoo-brasil/.git
-RUN git clone --depth=1 --branch=master git@bitbucket.org:trustcode/odoo-temas.git && \
+RUN git clone --depth=1 --branch=10.0 git@bitbucket.org:trustcode/odoo-temas.git && \
     rm -rf odoo-temas/.git
 
 
