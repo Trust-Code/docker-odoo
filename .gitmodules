@@ -4,3 +4,12 @@
 [submodule "odoo-brasil"]
 	path = odoo-brasil
 	url = https://github.com/Trust-Code/odoo-brasil
+[submodule "python-boleto"]
+	path = python-boleto
+	url = https://github.com/Trust-Code/python-boleto
+[submodule "python-cnab"]
+	path = python-cnab
+	url = https://github.com/Trust-Code/python-cnab
+[submodule "PyTrustNFe"]
+	path = PyTrustNFe
+	url = https://github.com/danimaribeiro/PyTrustNFe
