@@ -1,3 +1,6 @@
 [submodule "scrum"]
 	path = scrum
 	url = https://github.com/Trust-Code/scrum.git
+[submodule "odoo-brasil"]
+	path = odoo-brasil
+	url = https://github.com/Trust-Code/odoo-brasil
