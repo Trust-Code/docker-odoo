@@ -12,16 +12,17 @@ RUN \
   echo "IdentityFile /opt/chave-ssh" >> /etc/ssh/ssh_config && \
   echo "StrictHostKeyChecking no" >> /etc/ssh/ssh_config
 
+ADD https://github.com/Trust-Code/odoo-brasil/archive/10.0.zip odoo-brasil.zip
 ADD https://github.com/Trust-Code/scrum/archive/10.0.zip scrum.zip
 ADD https://github.com/Trust-Code/trustcode-addons/archive/10.0.zip trustcode-addons.zip
 ADD https://github.com/odoo/odoo/archive/10.0.zip odoo.zip
-RUN git clone --depth=1 --branch=10.0 git@bitbucket.org:trustcode/odoo-brasil.git && \
-    rm -rf odoo-brasil/.git
+
 RUN git clone --depth=1 --branch=10.0 git@bitbucket.org:trustcode/odoo-temas.git && \
     rm -rf odoo-temas/.git
 
 
-RUN unzip -q scrum.zip && rm scrum.zip && mv scrum-10.0 scrum && \
+RUN unzip -q odoo-brasil.zip && rm odoo-brasil.zip && mv odoo-brasil-10.0 odoo-brasil && \
+    unzip -q scrum.zip && rm scrum.zip && mv scrum-10.0 scrum && \
     unzip -q trustcode-addons.zip && rm trustcode-addons.zip && mv trustcode-addons-10.0 trustcode-addons && \
     unzip -q odoo.zip && rm odoo.zip && mv odoo-10.0 odoo && \
     cd odoo && find . -name "*.po" -not -name "pt_BR.po" -not -name "pt.po"  -type f -delete && \
