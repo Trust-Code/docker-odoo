@@ -33,7 +33,7 @@ RUN unzip -q odoo-brasil.zip && rm odoo-brasil.zip && mv odoo-brasil-10.0 odoo-b
     find . -path "*l10n_*" -delete && \
     rm -R debian && rm -R doc && rm -R setup && cd ..
 
-RUN pip install --no-cache-dir pytrustnfe python-cnab python-boleto
+RUN pip install --no-cache-dir pytrustnfe python-cnab python-boleto https://github.com/Trust-Code/pysigep/archive/develop.zip
 
 	##### Configurações Odoo #####
 
