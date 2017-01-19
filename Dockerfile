@@ -46,6 +46,7 @@ WORKDIR /opt/odoo
 USER odoo
 
 ENV PG_HOST=localhost
+ENV PG_PORT=5432
 ENV PG_USER=odoo
 ENV PG_PASSWORD=odoo
 ENV PORT=8069
