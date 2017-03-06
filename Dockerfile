@@ -15,6 +15,7 @@ RUN \
 ADD https://github.com/Trust-Code/odoo-brasil/archive/10.0.zip odoo-brasil.zip
 ADD https://github.com/Trust-Code/trustcode-addons/archive/10.0.zip trustcode-addons.zip
 ADD https://github.com/Trust-Code/odoo-eam/archive/10.0.zip odoo-eam.zip
+ADD https://github.com/pledra/odoo-product-configurator/archive/10.0.zip product-configurator.zip
 ADD https://github.com/Trust-Code/odoo/archive/10.0.zip odoo.zip
 
 RUN git clone --depth=1 --branch=10.0 git@bitbucket.org:trustcode/odoo-reports.git && \
@@ -27,6 +28,7 @@ RUN git clone --depth=1 --branch=10.0 git@bitbucket.org:trustcode/odoo-temas.git
 
 RUN unzip -q odoo-brasil.zip && rm odoo-brasil.zip && mv odoo-brasil-10.0 odoo-brasil && \
     unzip -q odoo-eam.zip && rm odoo-eam.zip && mv odoo-eam-10.0 odoo-eam && \
+    unzip -q product-configurator.zip && rm product-configurator.zip && mv odoo-product-configurator-10.0 product-configurator && \
     unzip -q trustcode-addons.zip && rm trustcode-addons.zip && mv trustcode-addons-10.0 trustcode-addons && \
     unzip -q odoo.zip && rm odoo.zip && mv odoo-10.0 odoo && \
     cd odoo && find . -name "*.po" -not -name "pt_BR.po" -not -name "pt.po"  -type f -delete && \
