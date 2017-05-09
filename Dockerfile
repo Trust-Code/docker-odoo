@@ -24,6 +24,8 @@ RUN git clone --depth=1 --branch=10.0 git@bitbucket.org:trustcode/odoo-charts.gi
     rm -rf odoo-charts/.git
 RUN git clone --depth=1 --branch=10.0 git@bitbucket.org:trustcode/odoo-temas.git && \
     rm -rf odoo-temas/.git
+RUN git clone --depth=1 --branch=10.0 git@bitbucket.org:trustcode/trustcode-enterprise.git && \
+    rm -rf trustcode-enterprise/.git
 
 
 RUN unzip -q odoo-brasil.zip && rm odoo-brasil.zip && mv odoo-brasil-10.0 odoo-brasil && \
