@@ -15,7 +15,7 @@ RUN \
 ADD https://github.com/Trust-Code/odoo-brasil/archive/10.0.zip odoo-brasil.zip
 ADD https://github.com/Trust-Code/trustcode-addons/archive/10.0.zip trustcode-addons.zip
 ADD https://github.com/Trust-Code/odoo-eam/archive/10.0.zip odoo-eam.zip
-vADD https://github.com/Trust-Code/scrum/archive/10.0.zip scrum.zip
+ADD https://github.com/Trust-Code/scrum/archive/10.0.zip scrum.zip
 ADD https://github.com/Trust-Code/odoo-product-configurator/archive/10.0.zip product-configurator.zip
 ADD https://github.com/Trust-Code/odoo/archive/10.0.zip odoo.zip
 
