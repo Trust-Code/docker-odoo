@@ -56,6 +56,7 @@ ENV PG_PORT=5432
 ENV PG_USER=odoo
 ENV PG_PASSWORD=odoo
 ENV PORT=8069
+ENV WORKERS=3
 
 VOLUME ["/opt/", "/etc/odoo"]
 CMD ["/usr/bin/supervisord"]
