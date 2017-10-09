@@ -1,10 +1,9 @@
-FROM trustcode/docker-odoo-base
+FROM trustcode/docker-odoo-base:v11
 
 	##### Repositórios TrustCode #####
 
 WORKDIR /opt/odoo
-ADD https://downloads.wkhtmltopdf.org/0.12/0.12.1/wkhtmltox-0.12.1_linux-trusty-amd64.deb /opt/sources/temp.deb
-RUN apt-get install -y unzip git && rm /opt/sources/temp.deb
+RUN apt-get install -y unzip git
 
 ADD chave-ssh /opt/
 RUN \
@@ -12,34 +11,16 @@ RUN \
   echo "IdentityFile /opt/chave-ssh" >> /etc/ssh/ssh_config && \
   echo "StrictHostKeyChecking no" >> /etc/ssh/ssh_config
 
-ADD https://github.com/Trust-Code/odoo-brasil/archive/10.0.zip odoo-brasil.zip
-ADD https://github.com/Trust-Code/trustcode-addons/archive/10.0.zip trustcode-addons.zip
-ADD https://github.com/Trust-Code/odoo-eam/archive/10.0.zip odoo-eam.zip
-ADD https://github.com/Trust-Code/scrum/archive/10.0.zip scrum.zip
-ADD https://github.com/Trust-Code/odoo-product-configurator/archive/10.0.zip product-configurator.zip
-ADD https://github.com/Trust-Code/odoo/archive/10.0.zip odoo.zip
+ADD https://github.com/Trust-Code/odoo-brasil/archive/11.0.zip odoo-brasil.zip
+ADD https://github.com/Trust-Code/odoo/archive/11.0.zip odoo.zip
 
-RUN git clone --depth=1 --branch=10.0 git@bitbucket.org:trustcode/odoo-reports.git && \
-    rm -rf odoo-reports/.git
-RUN git clone --depth=1 --branch=10.0 git@bitbucket.org:trustcode/odoo-charts.git && \
-    rm -rf odoo-charts/.git
-RUN git clone --depth=1 --branch=10.0 git@bitbucket.org:trustcode/odoo-temas.git && \
-    rm -rf odoo-temas/.git
-RUN git clone --depth=1 --branch=10.0 git@bitbucket.org:trustcode/trustcode-enterprise.git && \
-    rm -rf trustcode-enterprise/.git
-
-
-RUN unzip -q odoo-brasil.zip && rm odoo-brasil.zip && mv odoo-brasil-10.0 odoo-brasil && \
-    unzip -q odoo-eam.zip && rm odoo-eam.zip && mv odoo-eam-10.0 odoo-eam && \
-    unzip -q scrum.zip && rm scrum.zip && mv scrum-10.0 scrum && \
-    unzip -q product-configurator.zip && rm product-configurator.zip && mv odoo-product-configurator-10.0 product-configurator && \
-    unzip -q trustcode-addons.zip && rm trustcode-addons.zip && mv trustcode-addons-10.0 trustcode-addons && \
-    unzip -q odoo.zip && rm odoo.zip && mv odoo-10.0 odoo && \
+RUN unzip -q odoo-brasil.zip && rm odoo-brasil.zip && mv odoo-brasil-11.0 odoo-brasil && \
+    unzip -q odoo.zip && rm odoo.zip && mv odoo-11.0 odoo && \
     cd odoo && find . -name "*.po" -not -name "pt_BR.po" -not -name "pt.po"  -type f -delete && \
     find . -path "*l10n_*" -delete && \
     rm -R debian && rm -R doc && rm -R setup && cd ..
 
-RUN pip install --no-cache-dir pytrustnfe python-cnab python-boleto https://github.com/Trust-Code/pysigep/archive/develop.zip
+RUN pip install --no-cache-dir pytrustnfe3 python3-cnab python3-boleto
 
 	##### Configurações Odoo #####
 
