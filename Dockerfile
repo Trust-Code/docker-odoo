@@ -14,6 +14,9 @@ RUN \
 ADD https://github.com/Trust-Code/odoo-brasil/archive/11.0.zip odoo-brasil.zip
 ADD https://github.com/Trust-Code/odoo/archive/11.0.zip odoo.zip
 
+RUN git clone --depth=1 --branch=11.0 git@bitbucket.org:trustcode/trustcode-enterprise.git && \
+    rm -rf trustcode-enterprise/.git
+
 RUN unzip -q odoo-brasil.zip && rm odoo-brasil.zip && mv odoo-brasil-11.0 odoo-brasil && \
     unzip -q odoo.zip && rm odoo.zip && mv odoo-11.0 odoo && \
     cd odoo && find . -name "*.po" -not -name "pt_BR.po" -not -name "pt.po"  -type f -delete && \
