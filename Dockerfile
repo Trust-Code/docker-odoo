@@ -5,20 +5,13 @@ FROM trustcode/docker-odoo-base:v11
 WORKDIR /opt/odoo
 RUN apt-get install -y unzip git
 
-ADD chave-ssh /opt/
-RUN \
-  chmod 600 /opt/chave-ssh && \
-  echo "IdentityFile /opt/chave-ssh" >> /etc/ssh/ssh_config && \
-  echo "StrictHostKeyChecking no" >> /etc/ssh/ssh_config
-
+ADD https://github.com/Trust-Code/trustcode-addons/archive/11.0.zip trustcode-addons.zip
 ADD https://github.com/Trust-Code/odoo-brasil/archive/11.0.zip odoo-brasil.zip
 ADD https://github.com/Trust-Code/odoo/archive/11.0.zip odoo.zip
 
-RUN git clone --depth=1 --branch=11.0 git@bitbucket.org:trustcode/trustcode-enterprise.git && \
-    rm -rf trustcode-enterprise/.git
-
 RUN unzip -q odoo-brasil.zip && rm odoo-brasil.zip && mv odoo-brasil-11.0 odoo-brasil && \
     unzip -q odoo.zip && rm odoo.zip && mv odoo-11.0 odoo && \
+		unzip -q trustcode-addons.zip && rm trustcode-addons.zip && mv trustcode-addons-11.0 trustcode-addons && \
     cd odoo && find . -name "*.po" -not -name "pt_BR.po" -not -name "pt.po"  -type f -delete && \
     find . -path "*l10n_*" -delete && \
     rm -R debian && rm -R doc && rm -R setup && cd ..
