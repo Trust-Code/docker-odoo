@@ -30,7 +30,7 @@ RUN unzip -q l10n-brazil.zip && rm l10n-brazil.zip && mv l10n-brazil-8.0 l10n-br
     unzip -q odoo-utils.zip && rm odoo-utils.zip && mv odoo-utils-8.0 odoo-utils && \
     unzip -q account-fiscal-rule.zip && rm account-fiscal-rule.zip && mv account-fiscal-rule-8.0 account-fiscal-rule && \
     unzip -q project.zip && rm project.zip && mv project-8.0 project && \
-    unzip -q odoo-project_scrum.zip && rm odoo-project_scrum.zip && mv odoo-project_scrum-8.0 project && \
+    unzip -q odoo-project_scrum.zip && rm odoo-project_scrum.zip && mv odoo-project_scrum-8.0 odoo-project_scrum && \
     unzip -q web.zip && rm web.zip && mv web-8.0 web && \
     unzip -q account-financial-tools.zip && rm account-financial-tools.zip && mv account-financial-tools-8.0 account-financial-tools && \
     unzip -q bank-statement-import.zip && rm bank-statement-import.zip && mv bank-statement-import-8.0 bank-statement-import && \
