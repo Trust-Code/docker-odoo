@@ -45,8 +45,8 @@ ADD https://github.com/Trust-Code/PyCNAB/archive/master.zip pycnab.zip
 ADD https://github.com/Trust-Code/PySPED/archive/8.0.zip pysped.zip
 
 RUN unzip -q pyboleto.zip && rm pyboleto.zip && cd pyboleto-master && python setup.py install && cd .. && \
-    unzip -q pycnab.zip && rm pycnab.zip && cd pycnab-master && python setup.py install && cd .. && \
-    unzip -q pysped.zip && rm pysped.zip && cd pysped-8.0 && python setup.py install && cd ..
+    unzip -q pycnab.zip && rm pycnab.zip && cd PyCNAB-master && python setup.py install && cd .. && \
+    unzip -q pysped.zip && rm pysped.zip && cd PySPED-8.0 && python setup.py install && cd ..
 
 	##### Configurações Odoo #####
 
