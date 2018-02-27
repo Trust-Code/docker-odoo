@@ -40,8 +40,8 @@ RUN unzip -q l10n-brazil.zip && rm l10n-brazil.zip && mv l10n-brazil-8.0 l10n-br
     rm -R debian && rm -R doc && rm -R setup && cd ..
 
 # Pyboleto, PyCnab, PySped
-ADD https://github.com/Trust-Code/pyboleto/archive/8.0.zip pyboleto.zip
-ADD https://github.com/Trust-Code/PyCNAB/archive/8.0.zip pycnab.zip
+ADD https://github.com/Trust-Code/pyboleto/archive/master.zip pyboleto.zip
+ADD https://github.com/Trust-Code/PyCNAB/archive/master.zip pycnab.zip
 ADD https://github.com/Trust-Code/PySPED/archive/8.0.zip pysped.zip
 
 RUN unzip -q pyboleto.zip && rm pyboleto.zip && cd pyboleto-master && python setup.py install && cd .. && \
