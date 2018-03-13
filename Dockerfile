@@ -41,7 +41,6 @@ RUN unzip -q l10n-brazil.zip && rm l10n-brazil.zip && mv l10n-brazil-8.0 l10n-br
     unzip -q partner-contact.zip && rm partner-contact.zip && mv partner-contact-8.0 partner-contact && \
     unzip -q reporting-engine.zip && rm reporting-engine.zip && mv reporting-engine-8.0 reporting-engine && \
     cd odoo && find . -name "*.po" -not -name "pt_BR.po" -not -name "pt.po"  -type f -delete && \
-    find . -path "*l10n_*" -delete && \
     rm -R debian && rm -R doc && rm -R setup && cd ..
 
 # Pyboleto, PyCnab, PySped
