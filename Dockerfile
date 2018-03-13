@@ -15,6 +15,7 @@ ADD https://github.com/Trust-Code/account-fiscal-rule/archive/8.0.zip account-fi
 ADD https://github.com/Trust-Code/project/archive/8.0.zip project.zip
 ADD https://github.com/Trust-Code/odoo-project_scrum/archive/8.0.zip odoo-project_scrum.zip
 ADD https://github.com/Trust-Code/trust-themes/archive/8.0.zip trust-themes.zip
+ADD https://github.com/Trust-Code/trust-addons/archive/8.0.zip trust-addons.zip
 ADD https://github.com/OCA/web/archive/8.0.zip web.zip
 ADD https://github.com/OCA/account-financial-tools/archive/8.0.zip account-financial-tools.zip
 ADD https://github.com/OCA/bank-statement-import/archive/8.0.zip bank-statement-import.zip
@@ -33,6 +34,7 @@ RUN unzip -q l10n-brazil.zip && rm l10n-brazil.zip && mv l10n-brazil-8.0 l10n-br
     unzip -q project.zip && rm project.zip && mv project-8.0 project && \
     unzip -q odoo-project_scrum.zip && rm odoo-project_scrum.zip && mv odoo-project_scrum-8.0 odoo-project_scrum && \
     unzip -q trust-themes.zip && rm trust-themes.zip && mv trust-themes-8.0 trust-themes && \
+    unzip -q trust-addons.zip && rm trust-addons.zip && mv trust-addons-8.0 trust-addons && \
     unzip -q web.zip && rm web.zip && mv web-8.0 web && \
     unzip -q account-financial-tools.zip && rm account-financial-tools.zip && mv account-financial-tools-8.0 account-financial-tools && \
     unzip -q bank-statement-import.zip && rm bank-statement-import.zip && mv bank-statement-import-8.0 bank-statement-import && \
