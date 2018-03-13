@@ -23,6 +23,7 @@ ADD https://github.com/OCA/partner-contact/archive/8.0.zip partner-contact.zip
 ADD https://github.com/OCA/account-payment/archive/8.0.zip account-payment.zip
 ADD https://github.com/OCA/reporting-engine/archive/8.0.zip reporting-engine.zip
 ADD https://github.com/OCA/account-reconcile/archive/8.0.zip account-reconcile.zip
+ADD https://github.com/OCA/bank-payment/archive/8.0.zip bank-payment.zip
 ADD https://github.com/odoo/odoo/archive/8.0.zip odoo.zip
 
 RUN unzip -q l10n-brazil.zip && rm l10n-brazil.zip && mv l10n-brazil-8.0 l10n-brazil && \
@@ -44,6 +45,7 @@ RUN unzip -q l10n-brazil.zip && rm l10n-brazil.zip && mv l10n-brazil-8.0 l10n-br
     unzip -q account-payment.zip && rm account-payment.zip && mv account-payment-8.0 account-payment && \
     unzip -q reporting-engine.zip && rm reporting-engine.zip && mv reporting-engine-8.0 reporting-engine && \
     unzip -q account-reconcile.zip && rm account-reconcile.zip && mv account-reconcile-8.0 account-reconcile && \
+    unzip -q bank-payment.zip && rm bank-payment.zip && mv bank-payment-8.0 bank-payment && \
     cd odoo && find . -name "*.po" -not -name "pt_BR.po" -not -name "pt.po"  -type f -delete && \
     rm -R debian && rm -R doc && rm -R setup && cd ..
 
