@@ -20,6 +20,7 @@ ADD https://github.com/OCA/web/archive/8.0.zip web.zip
 ADD https://github.com/OCA/account-financial-tools/archive/8.0.zip account-financial-tools.zip
 ADD https://github.com/OCA/bank-statement-import/archive/8.0.zip bank-statement-import.zip
 ADD https://github.com/OCA/partner-contact/archive/8.0.zip partner-contact.zip
+ADD https://github.com/OCA/account-payment/archive/8.0.zip account-payment.zip
 ADD https://github.com/OCA/reporting-engine/archive/8.0.zip reporting-engine.zip
 ADD https://github.com/odoo/odoo/archive/8.0.zip odoo.zip
 
@@ -39,6 +40,7 @@ RUN unzip -q l10n-brazil.zip && rm l10n-brazil.zip && mv l10n-brazil-8.0 l10n-br
     unzip -q account-financial-tools.zip && rm account-financial-tools.zip && mv account-financial-tools-8.0 account-financial-tools && \
     unzip -q bank-statement-import.zip && rm bank-statement-import.zip && mv bank-statement-import-8.0 bank-statement-import && \
     unzip -q partner-contact.zip && rm partner-contact.zip && mv partner-contact-8.0 partner-contact && \
+    unzip -q account-payment.zip && rm account-payment.zip && mv account-payment-8.0 account-payment && \
     unzip -q reporting-engine.zip && rm reporting-engine.zip && mv reporting-engine-8.0 reporting-engine && \
     cd odoo && find . -name "*.po" -not -name "pt_BR.po" -not -name "pt.po"  -type f -delete && \
     rm -R debian && rm -R doc && rm -R setup && cd ..
