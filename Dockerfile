@@ -55,6 +55,7 @@ ADD https://github.com/Trust-Code/PyCNAB/archive/master.zip pycnab.zip
 ADD https://github.com/Trust-Code/PySPED/archive/8.0.zip pysped.zip
 
 RUN pip install --no-cache-dir pytrustnfe
+RUN pip install --no-cache-dir https://github.com/Trust-Code/geraldo/archive/master.zip
 
 RUN unzip -q pyboleto.zip && rm pyboleto.zip && cd pyboleto-master && python setup.py install && cd .. && \
     unzip -q pycnab.zip && rm pycnab.zip && cd PyCNAB-master && python setup.py install && cd .. && \
