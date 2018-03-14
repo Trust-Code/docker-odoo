@@ -52,13 +52,14 @@ RUN unzip -q l10n-brazil.zip && rm l10n-brazil.zip && mv l10n-brazil-8.0 l10n-br
 # Pyboleto, PyCnab, PySped
 ADD https://github.com/Trust-Code/pyboleto/archive/master.zip pyboleto.zip
 ADD https://github.com/Trust-Code/PyCNAB/archive/master.zip pycnab.zip
+ADD https://github.com/Trust-Code/geraldo/archive/master.zip geraldo.zip
 ADD https://github.com/Trust-Code/PySPED/archive/8.0.zip pysped.zip
 
 RUN pip install --no-cache-dir pytrustnfe
-RUN pip install --no-cache-dir https://github.com/Trust-Code/geraldo/archive/master.zip
 
 RUN unzip -q pyboleto.zip && rm pyboleto.zip && cd pyboleto-master && python setup.py install && cd .. && \
     unzip -q pycnab.zip && rm pycnab.zip && cd PyCNAB-master && python setup.py install && cd .. && \
+    unzip -q geraldo.zip && rm geraldo.zip && cd geraldo-master && python setup.py install && cd .. && \
     unzip -q pysped.zip && rm pysped.zip && cd PySPED-8.0 && python setup.py install && cd ..
 
 	##### Configurações Odoo #####
