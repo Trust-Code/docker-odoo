@@ -15,7 +15,7 @@ RUN unzip -q odoo-brasil.zip && rm odoo-brasil.zip && mv odoo-brasil-11.0 odoo-b
     unzip -q odoo.zip && rm odoo.zip && mv odoo-11.0 odoo && \
     unzip -q trustcode-addons.zip && rm trustcode-addons.zip && mv trustcode-addons-11.0 trustcode-addons && \
     unzip -q odoo-product-configurator.zip && rm odoo-product-configurator.zip && mv odoo-product-configurator-11.0 odoo-product-configurator && \
-    unzip -q stock-logistics-warehouse.zip && \
+    unzip -q stock-logistics-warehouse.zip && rm stock-logistics-warehouse.zip && mv stock-logistics-warehouse-11.0 stock-logistics-warehouse && \
     cd odoo && find . -name "*.po" -not -name "pt_BR.po" -not -name "pt.po"  -type f -delete && \
     find . -path "*l10n_*" -delete && \
     rm -R debian && rm -R doc && rm -R setup && cd ..
