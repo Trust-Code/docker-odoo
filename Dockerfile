@@ -10,12 +10,14 @@ ADD https://github.com/Trust-Code/trustcode-addons/archive/11.0.zip trustcode-ad
 ADD https://github.com/Trust-Code/odoo-brasil/archive/11.0.zip odoo-brasil.zip
 ADD https://github.com/Trust-Code/odoo/archive/11.0.zip odoo.zip
 ADD https://github.com/Trust-Code/stock-logistics-warehouse/archive/11.0.zip stock-logistics-warehouse.zip
+ADD https://github.com/Trust-Code/queue/archive/11.0.zip queue.zip
 
 RUN unzip -q odoo-brasil.zip && rm odoo-brasil.zip && mv odoo-brasil-11.0 odoo-brasil && \
     unzip -q odoo.zip && rm odoo.zip && mv odoo-11.0 odoo && \
     unzip -q trustcode-addons.zip && rm trustcode-addons.zip && mv trustcode-addons-11.0 trustcode-addons && \
     unzip -q odoo-product-configurator.zip && rm odoo-product-configurator.zip && mv odoo-product-configurator-11.0 odoo-product-configurator && \
     unzip -q stock-logistics-warehouse.zip && rm stock-logistics-warehouse.zip && mv stock-logistics-warehouse-11.0 stock-logistics-warehouse && \
+    unzip -q queue.zip && rm queue.zip && mv queue-11.0 queue && \
     cd odoo && find . -name "*.po" -not -name "pt_BR.po" -not -name "pt.po"  -type f -delete && \
     find . -path "*l10n_*" -delete && \
     rm -R debian && rm -R doc && rm -R setup && cd ..
