@@ -33,6 +33,8 @@ Example: Switching the port on which Odoo will listen to:
 Preferred way:
 ---------------------
 
+Install [docker-compose](https://docs.docker.com/compose/install/) to manage docker containers.
+
 Create a docker-compose file following this example:
 ```yaml
 version: '3'
