@@ -3,14 +3,14 @@ FROM trustcode/docker-odoo-base:v11
 	##### Repositórios TrustCode #####
 
 WORKDIR /opt/odoo
-RUN apt-get install -y unzip git
+RUN apt-get install -y unzip git wget gettext-base
 
-ADD https://github.com/Trust-Code/odoo-product-configurator/archive/11.0.zip odoo-product-configurator.zip
-ADD https://github.com/Trust-Code/trustcode-addons/archive/11.0.zip trustcode-addons.zip
-ADD https://github.com/Trust-Code/odoo-brasil/archive/11.0.zip odoo-brasil.zip
-ADD https://github.com/Trust-Code/odoo/archive/11.0.zip odoo.zip
-ADD https://github.com/Trust-Code/stock-logistics-warehouse/archive/11.0.zip stock-logistics-warehouse.zip
-ADD https://github.com/Trust-Code/queue/archive/11.0.zip queue.zip
+RUN wget https://github.com/Trust-Code/odoo-product-configurator/archive/11.0.zip -O odoo-product-configurator.zip && \
+    wget https://github.com/Trust-Code/trustcode-addons/archive/11.0.zip -O trustcode-addons.zip && \
+    wget https://github.com/Trust-Code/odoo-brasil/archive/11.0.zip -O odoo-brasil.zip && \
+    wget https://github.com/Trust-Code/odoo/archive/11.0.zip -O odoo.zip && \
+    wget https://github.com/Trust-Code/stock-logistics-warehouse/archive/11.0.zip -O stock-logistics-warehouse.zip && \
+    wget https://github.com/Trust-Code/queue/archive/11.0.zip -O queue.zip
 
 RUN unzip -q odoo-brasil.zip && rm odoo-brasil.zip && mv odoo-brasil-11.0 odoo-brasil && \
     unzip -q odoo.zip && rm odoo.zip && mv odoo-11.0 odoo && \
@@ -38,7 +38,10 @@ ENV PG_HOST=localhost
 ENV PG_PORT=5432
 ENV PG_USER=odoo
 ENV PG_PASSWORD=odoo
+ENV PG_DATABASE=False
+ENV ODOO_PASSWORD=senha_admin
 ENV PORT=8069
+ENV LOG_FILE=/var/log/odoo/odoo.log
 ENV LONGPOLLING_PORT=8072
 ENV WORKERS=3
 
