@@ -28,11 +28,18 @@ RUN pip install --no-cache-dir pytrustnfe3 python3-cnab python3-boleto pycnab240
 
 ADD conf/odoo.conf /etc/odoo/
 RUN chown -R odoo:odoo /opt && \
-    chown -R odoo:odoo /etc/odoo/odoo.conf && \
-    apt-get clean
+    chown -R odoo:odoo /etc/odoo/odoo.conf
+
+RUN mkdir /opt/.ssh && \
+    chown -R odoo:odoo /opt/.ssh
+
+ADD bin/autoupdate /opt/odoo
+ADD bin/entrypoint.sh /opt/odoo
+RUN chown odoo:odoo /opt/odoo/autoupdate && \
+    chmod +x /opt/odoo/autoupdate && \
+    chmod +x /opt/odoo/entrypoint.sh
 
 WORKDIR /opt/odoo
-USER odoo
 
 ENV PG_HOST=localhost
 ENV PG_PORT=5432
@@ -46,4 +53,5 @@ ENV LONGPOLLING_PORT=8072
 ENV WORKERS=3
 
 VOLUME ["/opt/", "/etc/odoo"]
+ENTRYPOINT ["/opt/odoo/entrypoint.sh"]
 CMD ["/usr/bin/supervisord"]
