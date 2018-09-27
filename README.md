@@ -1,4 +1,4 @@
-# docker-odoo
+# Trustcode - Oficial docker image for Odoo 
 
 How do use this docker image ?
 ---------------------
@@ -89,3 +89,7 @@ Download this repository, change the environment variables in docker-compose.yml
 
 
 [![Docker Repository on Quay](https://quay.io/repository/danimaribeiro/docker-odoo/status "Docker Repository on Quay")](https://quay.io/repository/danimaribeiro/docker-odoo)
+
+Trustcode Sistemas Empresariais
+----------------
+![Trustcode](http://www.trustcode.com.br/logo.png)
