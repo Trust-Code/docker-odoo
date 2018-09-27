@@ -10,10 +10,10 @@ services:
     volumes:
       - ~/.ssh:/home/temp/.ssh
     environment:
-      PG_USER: postgres_user
+      PG_USER: jon_snow
       PG_PASSWORD: 123
       ODOO_VERSION: 11.0
       ODOO_ENTERPRISE: 1
       TRUSTCODE_ENTERPRISE: 1
-      DATABASE: database
+      DATABASE: trustcode15_09_2018
       DISABLE_LOGFILE: 1

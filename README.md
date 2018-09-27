@@ -6,7 +6,7 @@ How do use this docker image ?
 tldr; Minimal command to run this image
 
 ```bash
-▶ docker run --name odoo --net host -d -e PG_USER=odoo -e PG_PASSWORD=odoo trustcode/docker-odoo
+▶ docker run --name odoo --net host -d -e PG_USER=odoo -e PG_PASSWORD=odoo trustcode/docker-odoo:11.0
 ```
 
 Other parameters:
@@ -27,7 +27,7 @@ Other parameters:
 Example: Switching the port on which Odoo will listen to:
 
 ```bash
-▶ docker run --name odoo --net host -d -e PG_USER=odoo -e PG_PASSWORD=odoo -e PORT=8050 trustcode/docker-odoo
+▶ docker run --name odoo --net host -d -e PG_USER=odoo -e PG_PASSWORD=odoo -e PORT=8050 trustcode/docker-odoo:11.0
 ```
 
 Preferred way:
