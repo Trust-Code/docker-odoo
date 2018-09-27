@@ -34,7 +34,7 @@ Preferred way:
 ---------------------
 
 Create a docker-compose file following this example:
-```
+```yaml
 version: '3'
 services:
   odoo-update:
@@ -69,7 +69,7 @@ Updating the Odoo instance
 ----------------------------------
 
 If you want to update your Odoo instance just add to your docker-compose file the following command:
-```
+```yaml
     image: trustcode/docker-odoo:11.0
     command: autoupdate
     network_mode: host
