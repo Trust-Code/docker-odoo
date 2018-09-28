@@ -70,6 +70,8 @@ Change the parameters as you want and run:
 Updating the Odoo instance
 ----------------------------------
 
+Download the latest version of this docker image and follow below. We run daily builds of this image, it's safer to run this process in your Odoo instance at same periodicity.
+
 If you want to update your Odoo instance just add to your docker-compose file the following command:
 ```yaml
     image: trustcode/docker-odoo:11.0
