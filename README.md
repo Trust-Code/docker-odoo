@@ -64,7 +64,7 @@ Parameters:
 
 Change the parameters as you want and run:
 ```bash
-▶ docker-compose build && docker-compose up
+▶ docker-compose up
 ```
 
 Updating the Odoo instance
