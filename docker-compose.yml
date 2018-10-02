@@ -6,14 +6,15 @@ services:
       dockerfile: Dockerfile
     image: trustcode/docker-odoo:11.0
     network_mode: host
-    command: autoupdate
+    # command: autoupdate
     volumes:
       - ~/.ssh:/home/temp/.ssh
     environment:
-      PG_USER: jon_snow
+      PG_USER: novo
       PG_PASSWORD: 123
       ODOO_VERSION: 11.0
       ODOO_ENTERPRISE: 1
+      PORT: 8090
       TRUSTCODE_ENTERPRISE: 1
-      DATABASE: trustcode15_09_2018
+      DATABASE: curso_odoo
       DISABLE_LOGFILE: 1
