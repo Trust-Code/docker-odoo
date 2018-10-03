@@ -51,6 +51,7 @@ ENV PORT=8069
 ENV LOG_FILE=/var/log/odoo/odoo.log
 ENV LONGPOLLING_PORT=8072
 ENV WORKERS=3
+ENV DISABLE_LOGFILE=0
 
 VOLUME ["/opt/", "/etc/odoo"]
 ENTRYPOINT ["/opt/odoo/entrypoint.sh"]

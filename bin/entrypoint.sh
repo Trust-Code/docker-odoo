@@ -39,7 +39,7 @@ if [ $UID -eq 0 ]; then
 
   cd /opt/odoo
   chown odoo:odoo /etc/odoo/odoo.conf
-  exec env su odoo "$0" "$@"
+  exec env su odoo "$0" -- "$@"
 
 fi
 
@@ -87,5 +87,5 @@ export ADDONS_PATH="$path"
 conf=$(cat odoo.conf | envsubst)
 echo "$conf" > /etc/odoo/odoo.conf
 
-exec "$1"
+exec "$@"
 echo "Finalizou o entrypoint"

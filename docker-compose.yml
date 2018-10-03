@@ -13,8 +13,8 @@ services:
       PG_USER: novo
       PG_PASSWORD: 123
       ODOO_VERSION: 11.0
-      ODOO_ENTERPRISE: 1
+      ODOO_ENTERPRISE: 0
       PORT: 8090
-      TRUSTCODE_ENTERPRISE: 1
+      TRUSTCODE_ENTERPRISE: 0
       DATABASE: curso_odoo
       DISABLE_LOGFILE: 1
