@@ -5,11 +5,11 @@ FROM quay.io/danimaribeiro/docker-odoo-base:12.0
 WORKDIR /opt/odoo
 RUN apt-get install -y unzip git wget gettext-base
 
-RUN wget https://github.com/Trust-Code/odoo-brasil/archive/11.0.zip -O odoo-brasil.zip && \
-    wget https://github.com/Trust-Code/odoo/archive/11.0.zip -O odoo.zip
+RUN wget https://github.com/Trust-Code/odoo-brasil/archive/12.0.zip -O odoo-brasil.zip && \
+    wget https://github.com/odoo/odoo/archive/12.0.zip -O odoo.zip
 
-RUN unzip -q odoo-brasil.zip && rm odoo-brasil.zip && mv odoo-brasil-11.0 odoo-brasil && \
-    unzip -q odoo.zip && rm odoo.zip && mv odoo-11.0 odoo && \
+RUN unzip -q odoo-brasil.zip && rm odoo-brasil.zip && mv odoo-brasil-12.0 odoo-brasil && \
+    unzip -q odoo.zip && rm odoo.zip && mv odoo-12.0 odoo && \
     cd odoo && find . -name "*.po" -not -name "pt_BR.po" -not -name "pt.po"  -type f -delete && \
     find . -path "*l10n_*" -delete && \
     rm -R debian && rm -R doc && rm -R setup && cd ..
