@@ -71,19 +71,19 @@ if [ -f /opt/.ssh/id_rsa ]; then
 
   if [ $TRUSTCODE_APPS == 1 ]; then
     if [ ! -d trustcode-apps ]; then
-      git clone --single-branch -v -b $ODOO_VERSION git@github.com:Trust-Code/trustcode-apps.git
+      git clone --single-branch -v -b $ODOO_VERSION git@bitbucket.org:trustcode/trustcode-apps.git
     fi
   fi
 
   if [ $USE_SPECIFIC_REPO == 1 ]; then
     if [ ! -d $CLIENT_REPOSITORY ]; then
-      git clone --single-branch -v -b $ODOO_VERSION git@github.com:Trust-Code/$CLIENT_REPOSITORY.git
+      git clone --single-branch -v -b $ODOO_VERSION git@bitbucket.org:trustcode/$CLIENT_REPOSITORY.git
     fi
   fi
 
   if [ $TRUSTCODE_ONLY == 1 ]; then
     if [ ! -d trustcode-only ]; then
-      git clone --single-branch -v -b $ODOO_VERSION git@github.com:Trust-Code/trustcode-only.git
+      git clone --single-branch -v -b $ODOO_VERSION git@bitbucket.org:trustcode/trustcode-only.git
     fi
   fi
 
