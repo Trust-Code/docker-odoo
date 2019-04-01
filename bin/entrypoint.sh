@@ -75,6 +75,12 @@ if [ -f /opt/.ssh/id_rsa ]; then
     fi
   fi
 
+  if [ $USE_SPECIFIC_REPO == 1 ]; then
+    if [ ! -d $CLIENT_REPOSITORY ]; then
+      git clone --single-branch -v -b $ODOO_VERSION git@github.com:Trust-Code/$CLIENT_REPOSITORY.git
+    fi
+  fi
+
   if [ $TRUSTCODE_ONLY == 1 ]; then
     if [ ! -d trustcode-only ]; then
       git clone --single-branch -v -b $ODOO_VERSION git@github.com:Trust-Code/trustcode-only.git
