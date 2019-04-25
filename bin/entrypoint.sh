@@ -64,9 +64,6 @@ if [ -f /opt/.ssh/id_rsa ]; then
     if [ ! -d trustcode-enterprise ]; then
       git clone --single-branch -b $ODOO_VERSION git@bitbucket.org:trustcode/trustcode-enterprise.git
     fi
-    if [ ! -d odoo-reports ]; then
-      git clone --single-branch -b $ODOO_VERSION git@bitbucket.org:trustcode/odoo-reports.git
-    fi
   fi
 
   if [ $TRUSTCODE_APPS == 1 ]; then
