@@ -18,3 +18,5 @@ services:
       TRUSTCODE_ENTERPRISE: 0
       DATABASE: curso_odoo
       DISABLE_LOGFILE: 1
+      TIME_CPU: 600
+      TIME_REAL: 720
