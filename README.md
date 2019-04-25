@@ -53,6 +53,8 @@ services:
       TRUSTCODE_ENTERPRISE: 1
       DATABASE: database
       DISABLE_LOGFILE: 1
+      TIME_CPU: 600
+      TIME_REAL: 720
 ```
 
 Parameters:
@@ -61,6 +63,8 @@ Parameters:
 - TRUSTCODE_ENTERPRISE - download private modules from Trustcode
 - DATABASE - optional database name (required if you use autoupdate command when run the image)
 - DISABLE_LOGFILE - disable odoo logs to a file, instead output to standard (useful with autoupdate)
+- TIME_CPU - cpu limit before timeout
+- TIME_REAL - real limit before timeout
 
 Change the parameters as you want and run:
 ```bash
