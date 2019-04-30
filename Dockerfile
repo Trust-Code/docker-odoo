@@ -22,7 +22,7 @@ RUN unzip -q odoo-brasil.zip && rm odoo-brasil.zip && mv odoo-brasil-11.0 odoo-b
     find . -path "*l10n_*" -delete && \
     rm -R debian && rm -R doc && rm -R setup && cd ..
 
-RUN pip install --no-cache-dir pytrustnfe3 python3-cnab python3-boleto pycnab240
+RUN pip install --no-cache-dir pytrustnfe3 python3-cnab python3-boleto pycnab240 python-sped
 
 	##### Configurações Odoo #####
 
