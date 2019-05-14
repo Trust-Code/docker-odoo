@@ -1,4 +1,4 @@
-FROM trustcode/docker-odoo-base:v11
+FROM quay.io/danimaribeiro/docker-odoo-base:11.0
 
 	##### Repositórios TrustCode #####
 
