@@ -1,4 +1,4 @@
-FROM quay.io/danimaribeiro/docker-odoo-base:11.0
+FROM quay.io/danimaribeiro/docker-odoo-base:10.0
 
 	##### Repositórios TrustCode #####
 
