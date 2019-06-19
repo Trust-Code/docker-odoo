@@ -5,10 +5,12 @@ FROM quay.io/danimaribeiro/docker-odoo-base:12.0
 WORKDIR /opt/odoo
 
 RUN wget https://github.com/Trust-Code/odoo-brasil/archive/12.0.zip -O odoo-brasil.zip && \
-    wget https://github.com/odoo/odoo/archive/12.0.zip -O odoo.zip
+    wget https://github.com/odoo/odoo/archive/12.0.zip -O odoo.zip &&
+    wget https://github.com/Trust-Code/trustcode-addons/archive/12.0.zip -O trustcode-addons.zip
 
 RUN unzip -q odoo-brasil.zip && rm odoo-brasil.zip && mv odoo-brasil-12.0 odoo-brasil && \
     unzip -q odoo.zip && rm odoo.zip && mv odoo-12.0 odoo && \
+    unzip -q trustcode-addons.zip && rm trustcode-addons.zip && mv trustcode-addons-12.0 trustcode-addons && \
     cd odoo && find . -name "*.po" -not -name "pt_BR.po" -not -name "pt.po"  -type f -delete && \
     find . -path "*l10n_*" -delete && \
     rm -R debian && rm -R doc && rm -R setup && cd ..
