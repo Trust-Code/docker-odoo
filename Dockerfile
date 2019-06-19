@@ -6,7 +6,7 @@ WORKDIR /opt/odoo
 
 RUN wget https://github.com/Trust-Code/odoo-brasil/archive/12.0.zip -O odoo-brasil.zip && \
     wget https://github.com/odoo/odoo/archive/12.0.zip -O odoo.zip &&
-    wget https://github.com/Trust-Code/trustcode-addons/archive/12.0.zip -O odoo.zip
+    wget https://github.com/Trust-Code/trustcode-addons/archive/12.0.zip -O trustcode-addons.zip
 
 RUN unzip -q odoo-brasil.zip && rm odoo-brasil.zip && mv odoo-brasil-12.0 odoo-brasil && \
     unzip -q odoo.zip && rm odoo.zip && mv odoo-12.0 odoo && \
