@@ -10,7 +10,7 @@ RUN wget https://github.com/Trust-Code/odoo-product-configurator/archive/11.0.zi
     wget https://github.com/Trust-Code/odoo-brasil/archive/11.0.zip -O odoo-brasil.zip && \
     wget https://github.com/Trust-Code/odoo/archive/11.0.zip -O odoo.zip && \
     wget https://github.com/Trust-Code/stock-logistics-warehouse/archive/11.0.zip -O stock-logistics-warehouse.zip && \
-    wget https://github.com/Trust-Code/queue/archive/11.0.zip -O queue.zip
+    wget https://github.com/Trust-Code/queue/archive/11.0.zip -O queue.zip && \
     wget https://github.com/oca/web/archive/11.0.zip -O web.zip && \
     wget https://github.com/oca/server-ux/archive/11.0.zip -O server-ux.zip && \
     wget https://github.com/oca/reporting-engine/archive/11.0.zip -O reporting-engine.zip && \
