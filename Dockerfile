@@ -11,6 +11,11 @@ RUN wget https://github.com/Trust-Code/odoo-product-configurator/archive/11.0.zi
     wget https://github.com/Trust-Code/odoo/archive/11.0.zip -O odoo.zip && \
     wget https://github.com/Trust-Code/stock-logistics-warehouse/archive/11.0.zip -O stock-logistics-warehouse.zip && \
     wget https://github.com/Trust-Code/queue/archive/11.0.zip -O queue.zip
+    wget https://github.com/oca/web/archive/11.0.zip -O web.zip && \
+    wget https://github.com/oca/server-ux/archive/11.0.zip -O server-ux.zip && \
+    wget https://github.com/oca/reporting-engine/archive/11.0.zip -O reporting-engine.zip && \
+    wget https://github.com/oca/account-financial-reporting/archive/11.0.zip -O account-financial-reporting.zip && \
+    wget https://github.com/oca/mis-builder/archive/11.0.zip -O mis-builder.zip
 
 RUN unzip -q odoo-brasil.zip && rm odoo-brasil.zip && mv odoo-brasil-11.0 odoo-brasil && \
     unzip -q odoo.zip && rm odoo.zip && mv odoo-11.0 odoo && \
@@ -18,6 +23,11 @@ RUN unzip -q odoo-brasil.zip && rm odoo-brasil.zip && mv odoo-brasil-11.0 odoo-b
     unzip -q odoo-product-configurator.zip && rm odoo-product-configurator.zip && mv odoo-product-configurator-11.0 odoo-product-configurator && \
     unzip -q stock-logistics-warehouse.zip && rm stock-logistics-warehouse.zip && mv stock-logistics-warehouse-11.0 stock-logistics-warehouse && \
     unzip -q queue.zip && rm queue.zip && mv queue-11.0 queue && \
+    unzip -q web.zip && rm web.zip && mv web-11.0 web && \
+    unzip -q server-ux.zip && rm server-ux.zip && mv server-ux-11.0 server-ux && \
+    unzip -q reporting-engine.zip && rm reporting-engine.zip && mv reporting-engine-11.0 reporting-engine && \
+    unzip -q account-financial-reporting.zip && rm account-financial-reporting.zip && mv account-financial-reporting-11.0 account-financial-reporting && \
+    unzip -q mis-builder.zip && rm mis-builder.zip && mv mis-builder-11.0 mis-builder && \
     cd odoo && find . -name "*.po" -not -name "pt_BR.po" -not -name "pt.po"  -type f -delete && \
     find . -path "*l10n_*" -delete && \
     rm -R debian && rm -R doc && rm -R setup && cd ..
