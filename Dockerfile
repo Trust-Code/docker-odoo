@@ -4,6 +4,7 @@ FROM quay.io/danimaribeiro/docker-odoo-base:12.0
 
 WORKDIR /opt/odoo
 
+ARG CACHEBUST=1
 RUN wget https://github.com/Trust-Code/odoo-brasil/archive/12.0.zip -O odoo-brasil.zip && \
     wget https://github.com/odoo/odoo/archive/12.0.zip -O odoo.zip && \
     wget https://github.com/Trust-Code/trustcode-addons/archive/12.0.zip -O trustcode-addons.zip && \
