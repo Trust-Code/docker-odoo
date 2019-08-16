@@ -5,6 +5,7 @@ FROM quay.io/danimaribeiro/docker-odoo-base:11.0
 WORKDIR /opt/odoo
 RUN apt-get install -y unzip git wget gettext-base
 
+ARG CACHEBUST=1
 RUN wget https://github.com/Trust-Code/odoo-product-configurator/archive/11.0.zip -O odoo-product-configurator.zip && \
     wget https://github.com/Trust-Code/trustcode-addons/archive/11.0.zip -O trustcode-addons.zip && \
     wget https://github.com/Trust-Code/odoo-brasil/archive/11.0.zip -O odoo-brasil.zip && \
