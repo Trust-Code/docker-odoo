@@ -3,8 +3,7 @@ FROM trustcode/docker-odoo-base:10.0
 	##### Repositórios TrustCode #####
 
 WORKDIR /opt/odoo
-ADD https://downloads.wkhtmltopdf.org/0.12/0.12.1/wkhtmltox-0.12.1_linux-trusty-amd64.deb /opt/sources/temp.deb
-RUN apt-get install -y unzip git && rm /opt/sources/temp.deb
+RUN apt-get install -y unzip git
 
 ADD chave-ssh /opt/
 RUN \
