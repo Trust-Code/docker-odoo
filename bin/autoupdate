@@ -1,0 +1,14 @@
+#!/usr/bin/env bash
+
+
+DATABASES=(``)
+
+echo "Inicializando atualizacao de bases"
+
+for base in "${DATABASES[@]}"
+do
+	echo "Atualizando $base"
+    click-odoo-update -c odoo.conf -d $base --watcher-max-seconds 60
+done
+
+echo "Finalizado"
