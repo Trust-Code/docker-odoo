@@ -1,4 +1,4 @@
-FROM registry.gitlab.com/odoonext/docker-odoo-base:13.0
+FROM trustcode/docker-odoo-base:12.0
 
 	##### Repositórios TrustCode #####
 WORKDIR /opt/odoo
