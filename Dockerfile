@@ -9,6 +9,7 @@ RUN wget https://github.com/Trust-Code/odoo/archive/13.0.zip -O odoo.zip && \
     wget https://github.com/oca/account-financial-reporting/archive/13.0.zip -O account-financial-reporting.zip && \
     wget https://github.com/oca/mis-builder/archive/13.0.zip -O mis-builder.zip && \
     wget https://github.com/Trust-Code/helpdesk/archive/13.0.zip -O helpdesk.zip && \
+    wget https://github.com/Trust-Code/odoo-themes/archive/13.0.zip -O odoo-themes.zip && \
     wget https://github.com/Trust-Code/odoo-brasil/archive/13.0.zip -O odoo-brasil.zip && \
     wget https://github.com/code-137/odoo-apps/archive/13.0.zip -O code137-apps.zip
 
@@ -18,6 +19,7 @@ RUN unzip -q odoo.zip && rm odoo.zip && mv odoo-13.0 odoo && \
     unzip -q account-financial-reporting.zip && rm account-financial-reporting.zip && mv account-financial-reporting-13.0 account-financial-reporting && \
     unzip -q mis-builder.zip && rm mis-builder.zip && mv mis-builder-13.0 mis-builder && \
     unzip -q helpdesk.zip && rm helpdesk.zip && mv helpdesk-13.0 helpdesk && \
+    unzip -q odoo-themes.zip && rm odoo-themes.zip && mv odoo-themes-13.0 odoo-themes && \
     unzip -q odoo-brasil.zip && rm odoo-brasil.zip && mv odoo-brasil-13.0 odoo-brasil && \
     unzip -q code137-apps.zip && rm code137-apps.zip && mv odoo-apps-13.0 code137-apps && \
     cd odoo && find . -name "*.po" -not -name "pt_BR.po" -not -name "pt.po"  -type f -delete && \
