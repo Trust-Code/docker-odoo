@@ -6,7 +6,7 @@ WORKDIR /opt/odoo
 RUN wget https://github.com/Trust-Code/odoo/archive/13.0.zip -O odoo.zip && \
     wget https://github.com/oca/server-ux/archive/13.0.zip -O server-ux.zip && \
     wget https://github.com/oca/reporting-engine/archive/13.0.zip -O reporting-engine.zip && \
-    wget https://github.com/oca/account-financial-reporting/archive/13.0.zip -O account-financial-reporting.zip && \
+    wget https://github.com/Trust-Code/account-financial-reporting/archive/13.0.zip -O account-financial-reporting.zip && \
     wget https://github.com/oca/mis-builder/archive/13.0.zip -O mis-builder.zip && \
     wget https://github.com/Trust-Code/helpdesk/archive/13.0.zip -O helpdesk.zip && \
     wget https://github.com/Trust-Code/odoo-themes/archive/13.0.zip -O odoo-themes.zip && \
