@@ -26,4 +26,4 @@ jobs:
         uses: docker/build-push-action@v2
         with:
           push: true
-          tags: Trust-Code/docker-odoo:13.0
+          tags: trustcode/docker-odoo:13.0
