@@ -4,6 +4,7 @@ FROM trustcode/docker-odoo-base:14.0
 WORKDIR /opt/odoo
 
 RUN wget https://github.com/Trust-Code/odoo/archive/14.0.zip -O odoo.zip && \
+    wget https://github.com/oca/web/archive/14.0.zip -O web.zip && \
     wget https://github.com/oca/server-ux/archive/14.0.zip -O server-ux.zip && \
     wget https://github.com/oca/reporting-engine/archive/14.0.zip -O reporting-engine.zip && \
     wget https://github.com/oca/account-financial-reporting/archive/14.0.zip -O account-financial-reporting.zip && \
@@ -15,6 +16,7 @@ RUN wget https://github.com/Trust-Code/odoo/archive/14.0.zip -O odoo.zip && \
     wget https://github.com/code-137/odoo-apps/archive/14.0.zip -O code137-apps.zip
 
 RUN unzip -q odoo.zip && rm odoo.zip && mv odoo-14.0 odoo && \
+    unzip -q web.zip && rm web.zip && mv web-14.0 web && \
     unzip -q server-ux.zip && rm server-ux.zip && mv server-ux-14.0 server-ux && \
     unzip -q reporting-engine.zip && rm reporting-engine.zip && mv reporting-engine-14.0 reporting-engine && \
     unzip -q account-financial-reporting.zip && rm account-financial-reporting.zip && mv account-financial-reporting-14.0 account-financial-reporting && \
