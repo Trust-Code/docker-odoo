@@ -6,6 +6,8 @@ on:
   push:
     branches: [ 14.0 ]
 
+  workflow_dispatch:
+
 jobs:
 
   build:
