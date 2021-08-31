@@ -60,6 +60,18 @@ if [ -f /opt/.ssh/id_rsa ]; then
     fi
   fi
 
+  if [ $TRUSTCODE_APPS == 1 ]; then
+    if [ ! -d trustcode-apps ]; then
+      git clone --single-branch -v -b $ODOO_VERSION git@github.com:Trust-Code/advanced-apps.git
+    fi
+  fi
+
+  if [ $USE_SPECIFIC_REPO == 1 ]; then
+    if [ ! -d $CLIENT_REPOSITORY ]; then
+      git clone --single-branch -v -b $ODOO_VERSION git@github.com:Trust-Code/$CLIENT_REPOSITORY.git
+    fi
+  fi
+
 fi
 
 # Monta o addons_path
