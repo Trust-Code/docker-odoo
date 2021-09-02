@@ -52,6 +52,7 @@ RUN chown odoo:odoo /opt/odoo/autoupdate && \
 
 WORKDIR /opt/odoo
 
+ENV PYTHONPATH=$PYTHONPATH:/opt/odoo/odoo
 ENV PG_HOST=localhost
 ENV PG_PORT=5432
 ENV PG_USER=odoo
@@ -69,6 +70,7 @@ ENV TRUSTCODE_ENTERPRISE=0
 ENV TRUSTCODE_ONLY=0
 ENV TIME_CPU=6000
 ENV TIME_REAL=7200
+ENV DB_FILTER=False
 
 VOLUME ["/opt/", "/etc/odoo"]
 ENTRYPOINT ["/opt/odoo/entrypoint.sh"]

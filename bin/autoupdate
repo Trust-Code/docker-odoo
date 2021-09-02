@@ -1,84 +1,14 @@
-#!/usr/bin/env python
-"""Autoupdate Odoo.
-"""
+#!/usr/bin/env bash
 
-from __future__ import print_function
+export PGPASSWORD=$PG_PASSWORD
+DATABASES=(`psql -h $PG_HOST -U $PG_USER -d postgres -c "SELECT datname FROM pg_database WHERE datistemplate = false and datname <> 'postgres';" -t -w`)
 
-import os
-import sys
-from subprocess import PIPE, Popen
-from select import select
+echo "Inicializando atualizacao de bases"
 
+for base in "${DATABASES[@]}"
+do
+	echo "Atualizando $base"
+    click-odoo-update -c odoo.conf -d $base --watcher-max-seconds 60
+done
 
-HANG_INDICATOR = "creating or updating database tables\n"
-TIMEOUT = 30
-ODOO_SHELL_CODE = b"""
-import os
-
-try:
-    env["ir.module.module"].upgrade_changed_checksum
-except AttributeError:
-    # Deprecated addon version, or it is not installed at all
-    env["base.module.upgrade"].upgrade_module()
-else:
-    # Disable deprecated stuff
-    env["ir.config_parameter"].set_param(
-        "module_auto_update.enable_deprecated",
-        "0",
-    )
-    # Newer versions of ``module_auto_update`` recommend this approach
-    env["ir.module.module"].upgrade_changed_checksum(
-        os.environ.get("I18N_OVERWRITE") == "1",
-    )
-env.cr.commit()
-"""
-
-
-# Create the autoupdate process
-print("Starting autoupdate")
-database = os.environ.get("DATABASE")
-autoupdate = Popen(["odoo-bin", "shell", "-c", "odoo.conf", "-d", database],
-                   stdin=PIPE, stdout=PIPE, stderr=PIPE)
-fds = [autoupdate.stdout, autoupdate.stderr]
-terminating = killing = False
-stdout = stderr = ""
-
-print("Sending shell code")
-# Send Odoo shell code to perform autoupdate
-autoupdate.stdin.write(ODOO_SHELL_CODE)
-autoupdate.stdin.close()
-
-# Poll progress
-while autoupdate.poll() is None:
-    # Read file descriptors with specified timeout
-    read_streams = select(fds, [], [], TIMEOUT)[0]
-    if read_streams:
-        # There is some output to read on any FD
-        for stream in read_streams:
-            new_char = stream.read(1).decode()
-            # I need to know the FD where it comes from
-            if stream is autoupdate.stdout:
-                target = sys.stdout
-                stdout += new_char
-            else:
-                target = sys.stderr
-                stderr += new_char
-            # Forward that byte to system STDOUT/ERR
-            print(new_char, end="", file=target)
-    elif killing:
-        print(
-             "Process is unresponsive to SIGKILL "
-             "after %d seconds! Kill it manually." % TIMEOUT
-        )
-        sys.exit(256)
-    elif terminating:
-        print("Process is unresponsive to SIGTERM after %d seconds! Killing..." % TIMEOUT)
-        killing = True
-        autoupdate.kill()
-    elif stdout.endswith(HANG_INDICATOR) or stderr.endswith(HANG_INDICATOR):
-        print("No logs received after %d seconds! Terminating...")
-        terminating = True
-        autoupdate.terminate()
-
-print("Finalized auto update")
-sys.exit(autoupdate.poll())
+echo "Finalizado"
