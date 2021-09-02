@@ -45,6 +45,7 @@ RUN chown odoo:odoo /opt/odoo/autoupdate && \
 
 WORKDIR /opt/odoo
 
+ENV PYTHONPATH=$PYTHONPATH:/opt/odoo/odoo
 ENV PG_HOST=localhost
 ENV PG_PORT=5432
 ENV PG_USER=odoo
