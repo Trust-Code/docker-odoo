@@ -98,6 +98,8 @@ for directory in $directories; do
 done
 export ADDONS_PATH="$path"
 
+export ODOO_PASSWORD=$(cat /dev/urandom | tr -dc 'a-zA-Z0-9' | fold -w 32 | head -n 1)
+
 # Modifica as variáveis do odoo.conf baseado em variáveis de ambiente
 conf=$(cat odoo.conf | envsubst)
 echo "$conf" > /etc/odoo/odoo.conf
