@@ -70,6 +70,8 @@ ENV TRUSTCODE_ONLY=0
 ENV TIME_CPU=6000
 ENV TIME_REAL=7200
 ENV DB_FILTER=False
+ENV SENTRY_DSN=False
+ENV SENTRY_ENABLED=False
 
 VOLUME ["/opt/", "/etc/odoo"]
 ENTRYPOINT ["/opt/odoo/entrypoint.sh"]
