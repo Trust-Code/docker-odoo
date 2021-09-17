@@ -10,6 +10,7 @@ RUN wget https://github.com/Trust-Code/odoo/archive/14.0.zip -O odoo.zip && \
     wget https://github.com/oca/reporting-engine/archive/14.0.zip -O reporting-engine.zip && \
     wget https://github.com/oca/account-financial-reporting/archive/14.0.zip -O account-financial-reporting.zip && \
     wget https://github.com/oca/mis-builder/archive/14.0.zip -O mis-builder.zip && \
+    wget https://github.com/OCA/commission/archive/14.0.zip -O commission.zip && \
     wget https://github.com/Trust-Code/helpdesk/archive/14.0.zip -O helpdesk.zip && \
     wget https://github.com/odoo/design-themes/archive/14.0.zip -O design-themes.zip && \
     wget https://github.com/Trust-Code/trustcode-addons/archive/14.0.zip -O trustcode-addons.zip && \
@@ -23,6 +24,7 @@ RUN unzip -q odoo.zip && rm odoo.zip && mv odoo-14.0 odoo && \
     unzip -q reporting-engine.zip && rm reporting-engine.zip && mv reporting-engine-14.0 reporting-engine && \
     unzip -q account-financial-reporting.zip && rm account-financial-reporting.zip && mv account-financial-reporting-14.0 account-financial-reporting && \
     unzip -q mis-builder.zip && rm mis-builder.zip && mv mis-builder-14.0 mis-builder && \
+    unzip -q commission.zip && rm commission.zip && mv commission-14.0 commission && \
     unzip -q helpdesk.zip && rm helpdesk.zip && mv helpdesk-14.0 helpdesk && \
     unzip -q design-themes.zip && rm design-themes.zip && mv design-themes-14.0 design-themes && \
     unzip -q trustcode-addons.zip && rm trustcode-addons.zip && mv trustcode-addons-14.0 trustcode-addons && \
