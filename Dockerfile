@@ -13,7 +13,8 @@ RUN wget https://github.com/Trust-Code/odoo/archive/13.0.zip -O odoo.zip && \
     wget https://github.com/Trust-Code/odoo-themes/archive/13.0.zip -O odoo-themes.zip && \
     wget https://github.com/Trust-Code/trustcode-addons/archive/13.0.zip -O trustcode-addons.zip && \
     wget https://github.com/Trust-Code/odoo-brasil/archive/13.0.zip -O odoo-brasil.zip && \
-    wget https://github.com/code-137/odoo-apps/archive/13.0.zip -O code137-apps.zip
+    wget https://github.com/code-137/odoo-apps/archive/13.0.zip -O code137-apps.zip && \
+    wget https://github.com/novacode-nl/odoo-formio/archive/13.0.zip -O odoo-formio.zip
 
 RUN unzip -q odoo.zip && rm odoo.zip && mv odoo-13.0 odoo && \
     unzip -q server-ux.zip && rm server-ux.zip && mv server-ux-13.0 server-ux && \
@@ -26,6 +27,7 @@ RUN unzip -q odoo.zip && rm odoo.zip && mv odoo-13.0 odoo && \
     unzip -q trustcode-addons.zip && rm trustcode-addons.zip && mv trustcode-addons-13.0 trustcode-addons && \
     unzip -q odoo-brasil.zip && rm odoo-brasil.zip && mv odoo-brasil-13.0 odoo-brasil && \
     unzip -q code137-apps.zip && rm code137-apps.zip && mv odoo-apps-13.0 code137-apps && \
+    unzip -q odoo-formio.zip && rm odoo-formio.zip && mv odoo-formio-13.0 odoo-formio && \
     cd odoo && find . -name "*.po" -not -name "pt_BR.po" -not -name "pt.po"  -type f -delete && \
     find . -path "*l10n_*" -delete && \
     rm -R debian && rm -R doc && rm -R setup && cd ..
