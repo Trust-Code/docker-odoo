@@ -33,6 +33,7 @@ RUN unzip -q odoo.zip && rm odoo.zip && mv odoo-13.0 odoo && \
     rm -R debian && rm -R doc && rm -R setup && cd ..
 
 RUN pip install --no-cache-dir pytrustnfe3 python3-cnab python3-boleto pycnab240 python-sped mercadopago==1.1.1
+RUN pip install --no-cache-dir pyopenssl==20.0.1
 
 
 	##### Configurações Odoo #####
