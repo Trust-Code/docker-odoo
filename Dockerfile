@@ -35,7 +35,7 @@ RUN unzip -q odoo.zip && rm odoo.zip && mv odoo-14.0 odoo && \
     rm -R debian && rm -R doc && rm -R setup && cd ..
 
 RUN pip install --no-cache-dir pytrustnfe3 python3-cnab python3-boleto pycnab240 python-sped
-RUN pip install --no-cache-dir pyopenssl==20.0.1
+RUN pip install --no-cache-dir pyopenssl==20.0.1 signxml==2.9.0
 
 	##### Configurações Odoo #####
 
