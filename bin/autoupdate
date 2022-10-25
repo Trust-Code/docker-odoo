@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 export PGPASSWORD=$PG_PASSWORD
-DATABASES=(`psql -h $PG_HOST -U $PG_USER -d postgres -c "SELECT datname FROM pg_database WHERE datistemplate = false and datname <> 'postgres';" -t -w`)
+DATABASES=(`psql -h $PG_HOST -U $PG_USER -d postgres -c "SELECT datname FROM pg_database WHERE has_database_privilege('$PG_USER', datname, 'CREATE') and datistemplate = false and datname <> 'postgres';" -t -w`)
 
 echo "Inicializando atualizacao de bases"
 
