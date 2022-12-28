@@ -1,35 +1,35 @@
-FROM trustcode/docker-odoo-base:14.0
+FROM trustcode/docker-odoo-base:15.0
 
 	##### Repositórios TrustCode #####
 WORKDIR /opt/odoo
 
-RUN wget https://github.com/Trust-Code/odoo/archive/14.0.zip -O odoo.zip && \
-    wget https://github.com/oca/web/archive/14.0.zip -O web.zip && \
-    wget https://github.com/oca/account-reconcile/archive/14.0.zip -O account-reconcile.zip && \
-    wget https://github.com/oca/server-ux/archive/14.0.zip -O server-ux.zip && \
-    wget https://github.com/oca/reporting-engine/archive/14.0.zip -O reporting-engine.zip && \
-    wget https://github.com/oca/account-financial-reporting/archive/14.0.zip -O account-financial-reporting.zip && \
-    wget https://github.com/oca/mis-builder/archive/14.0.zip -O mis-builder.zip && \
-    wget https://github.com/OCA/commission/archive/14.0.zip -O commission.zip && \
-    wget https://github.com/Trust-Code/helpdesk/archive/14.0.zip -O helpdesk.zip && \
-    wget https://github.com/odoo/design-themes/archive/14.0.zip -O design-themes.zip && \
-    wget https://github.com/Trust-Code/trustcode-addons/archive/14.0.zip -O trustcode-addons.zip && \
-    wget https://github.com/Trust-Code/odoo-brasil/archive/14.0.zip -O odoo-brasil.zip && \
-    wget https://github.com/code-137/odoo-apps/archive/14.0.zip -O code137-apps.zip
+RUN wget https://github.com/Trust-Code/odoo/archive/15.0.zip -O odoo.zip && \
+    wget https://github.com/oca/web/archive/15.0.zip -O web.zip && \
+    wget https://github.com/oca/account-reconcile/archive/15.0.zip -O account-reconcile.zip && \
+    wget https://github.com/oca/server-ux/archive/15.0.zip -O server-ux.zip && \
+    wget https://github.com/oca/reporting-engine/archive/15.0.zip -O reporting-engine.zip && \
+    wget https://github.com/oca/account-financial-reporting/archive/15.0.zip -O account-financial-reporting.zip && \
+    wget https://github.com/oca/mis-builder/archive/15.0.zip -O mis-builder.zip && \
+    wget https://github.com/OCA/commission/archive/15.0.zip -O commission.zip && \
+    wget https://github.com/Trust-Code/helpdesk/archive/15.0.zip -O helpdesk.zip && \
+    wget https://github.com/odoo/design-themes/archive/15.0.zip -O design-themes.zip && \
+    wget https://github.com/Trust-Code/trustcode-addons/archive/15.0.zip -O trustcode-addons.zip && \
+    wget https://github.com/Trust-Code/odoo-brasil/archive/15.0.zip -O odoo-brasil.zip && \
+    wget https://github.com/code-137/odoo-apps/archive/15.0.zip -O code137-apps.zip
 
-RUN unzip -q odoo.zip && rm odoo.zip && mv odoo-14.0 odoo && \
-    unzip -q web.zip && rm web.zip && mv web-14.0 web && \
-    unzip -q account-reconcile.zip && rm account-reconcile.zip && mv account-reconcile-14.0 account-reconcile && \
-    unzip -q server-ux.zip && rm server-ux.zip && mv server-ux-14.0 server-ux && \
-    unzip -q reporting-engine.zip && rm reporting-engine.zip && mv reporting-engine-14.0 reporting-engine && \
-    unzip -q account-financial-reporting.zip && rm account-financial-reporting.zip && mv account-financial-reporting-14.0 account-financial-reporting && \
-    unzip -q mis-builder.zip && rm mis-builder.zip && mv mis-builder-14.0 mis-builder && \
-    unzip -q commission.zip && rm commission.zip && mv commission-14.0 commission && \
-    unzip -q helpdesk.zip && rm helpdesk.zip && mv helpdesk-14.0 helpdesk && \
-    unzip -q design-themes.zip && rm design-themes.zip && mv design-themes-14.0 design-themes && \
-    unzip -q trustcode-addons.zip && rm trustcode-addons.zip && mv trustcode-addons-14.0 trustcode-addons && \
-    unzip -q odoo-brasil.zip && rm odoo-brasil.zip && mv odoo-brasil-14.0 odoo-brasil && \
-    unzip -q code137-apps.zip && rm code137-apps.zip && mv odoo-apps-14.0 code137-apps && \
+RUN unzip -q odoo.zip && rm odoo.zip && mv odoo-15.0 odoo && \
+    unzip -q web.zip && rm web.zip && mv web-15.0 web && \
+    unzip -q account-reconcile.zip && rm account-reconcile.zip && mv account-reconcile-15.0 account-reconcile && \
+    unzip -q server-ux.zip && rm server-ux.zip && mv server-ux-15.0 server-ux && \
+    unzip -q reporting-engine.zip && rm reporting-engine.zip && mv reporting-engine-15.0 reporting-engine && \
+    unzip -q account-financial-reporting.zip && rm account-financial-reporting.zip && mv account-financial-reporting-15.0 account-financial-reporting && \
+    unzip -q mis-builder.zip && rm mis-builder.zip && mv mis-builder-15.0 mis-builder && \
+    unzip -q commission.zip && rm commission.zip && mv commission-15.0 commission && \
+    unzip -q helpdesk.zip && rm helpdesk.zip && mv helpdesk-15.0 helpdesk && \
+    unzip -q design-themes.zip && rm design-themes.zip && mv design-themes-15.0 design-themes && \
+    unzip -q trustcode-addons.zip && rm trustcode-addons.zip && mv trustcode-addons-15.0 trustcode-addons && \
+    unzip -q odoo-brasil.zip && rm odoo-brasil.zip && mv odoo-brasil-15.0 odoo-brasil && \
+    unzip -q code137-apps.zip && rm code137-apps.zip && mv odoo-apps-15.0 code137-apps && \
     cd odoo && find . -name "*.po" -not -name "pt_BR.po" -not -name "pt.po"  -type f -delete && \
     find . -path "*l10n_*" -delete && \
     rm -R debian && rm -R doc && rm -R setup && cd ..
