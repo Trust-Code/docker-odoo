@@ -11,7 +11,6 @@ RUN wget https://github.com/Trust-Code/odoo/archive/15.0.zip -O odoo.zip && \
     wget https://github.com/oca/account-financial-reporting/archive/15.0.zip -O account-financial-reporting.zip && \
     wget https://github.com/oca/mis-builder/archive/15.0.zip -O mis-builder.zip && \
     wget https://github.com/OCA/commission/archive/15.0.zip -O commission.zip && \
-    wget https://github.com/Trust-Code/helpdesk/archive/15.0.zip -O helpdesk.zip && \
     wget https://github.com/odoo/design-themes/archive/15.0.zip -O design-themes.zip && \
     wget https://github.com/Trust-Code/trustcode-addons/archive/15.0.zip -O trustcode-addons.zip && \
     wget https://github.com/Trust-Code/odoo-brasil/archive/15.0.zip -O odoo-brasil.zip && \
@@ -25,7 +24,6 @@ RUN unzip -q odoo.zip && rm odoo.zip && mv odoo-15.0 odoo && \
     unzip -q account-financial-reporting.zip && rm account-financial-reporting.zip && mv account-financial-reporting-15.0 account-financial-reporting && \
     unzip -q mis-builder.zip && rm mis-builder.zip && mv mis-builder-15.0 mis-builder && \
     unzip -q commission.zip && rm commission.zip && mv commission-15.0 commission && \
-    unzip -q helpdesk.zip && rm helpdesk.zip && mv helpdesk-15.0 helpdesk && \
     unzip -q design-themes.zip && rm design-themes.zip && mv design-themes-15.0 design-themes && \
     unzip -q trustcode-addons.zip && rm trustcode-addons.zip && mv trustcode-addons-15.0 trustcode-addons && \
     unzip -q odoo-brasil.zip && rm odoo-brasil.zip && mv odoo-brasil-15.0 odoo-brasil && \
