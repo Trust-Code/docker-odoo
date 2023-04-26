@@ -27,6 +27,8 @@ RUN unzip -q odoo-brasil.zip && rm odoo-brasil.zip && mv odoo-brasil-12.0 odoo-b
     rm -R debian && rm -R doc && rm -R setup && cd ..
 
 RUN pip install --no-cache-dir pytrustnfe3 python3-cnab python3-boleto pycnab240 python-sped
+RUN pip install --no-cache-dir signxml==2.9.0
+RUN pip install --no-cache-dir pyopenssl==22.1.0
 
 	##### Configurações Odoo #####
 
